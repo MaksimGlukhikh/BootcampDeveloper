@@ -1,0 +1,20 @@
+﻿
+// using static ArrayCreator;
+// using static ArrayMathcscs;
+using System.Diagnostics;
+
+int[] array = 1_000_000.Create()
+                .Fill(1, 5);
+// array.ConvertToStringAndPrintToTerminal();
+int m = 10_000;
+Stopwatch sw = new Stopwatch();
+sw.Start();
+int max = array.BadGetSum(m);
+sw.Stop();
+Console.WriteLine($"BadGetSum: {max} ==> {sw.ElapsedMilliseconds} ms");
+sw.Reset();
+sw.Start();
+max = array.GoodGetSum(m);
+sw.Stop();
+Console.WriteLine($"GoodGetSum: {max} ==> {sw.ElapsedMilliseconds} ms");
+
